@@ -1,0 +1,15 @@
+1.0.1: First dev version of Blog
+1.0.2: 
+    - Create the Posts Table
+    - create_posts_table.php
+1.0.3:
+    - Create the Categories Table
+    - create_categories_table.php
+1.0.4:
+    - Create the Tags and Pivot Table
+    - create_tags_table.php
+    - create_post_tag_table.php
+1.0.5:
+    - Seed all Tables
+    - seed_all_tables.php
+1.1.0: First version of Blog

@@ -1,0 +1,18 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: jeroenvanrensen.blog::lang.models.category.fields.name
+        type: text
+        span: left
+    slug:
+        label: jeroenvanrensen.blog::lang.models.category.fields.slug
+        type: text
+        span: right
+        preset: name
+    description:
+        label: jeroenvanrensen.blog::lang.models.category.fields.description
+        type: richeditor
+        span: full

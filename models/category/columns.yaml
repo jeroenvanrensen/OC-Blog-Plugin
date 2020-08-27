@@ -1,0 +1,14 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: jeroenvanrensen.blog::lang.models.category.columns.name
+        type: text
+        searchable: true
+    description:
+        label: jeroenvanrensen.blog::lang.models.category.columns.description
+        type: text
+        invisible: true
+        searchable: true

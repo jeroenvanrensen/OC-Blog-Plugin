@@ -1,0 +1,22 @@
+{% set post = __SELF__.post %}
+
+<h2>{{ post.title }}</h2>
+<p>
+    {{ 'jeroenvanrensen.blog::lang.components.blogpost.html.posted' | trans }} 
+    {{ 'jeroenvanrensen.blog::lang.components.blogpost.html.on_date' | trans }}  <b>{{ post.published_at | date('jeroenvanrensen.blog::lang.components.blogpost.html.date_format' | trans) }}</b>
+    {{ 'jeroenvanrensen.blog::lang.components.blogpost.html.at_time' | trans }}  <b>{{ post.published_at | date('jeroenvanrensen.blog::lang.components.blogpost.html.time_format' | trans) }}</b>
+    {{ 'jeroenvanrensen.blog::lang.components.blogpost.html.by_author' | trans }}  <b>{{ post.user.getFullNameAttribute() }}</b>
+    {% if post.category_id > 0 %}
+    {{ 'jeroenvanrensen.blog::lang.components.blogpost.html.in_category' | trans }}  <b>{{ post.category.name }}</b>
+    {% endif %}
+</p>
+<p>
+    <b>{{ 'jeroenvanrensen.blog::lang.components.blogpost.html.tags' | trans }} :</b>
+    {% for tag in post.tags %}
+        {{ tag.name }}, 
+    {% endfor %}
+</p>
+{% if post.featured_image %}
+    <img style="max-width: 100%;" src="{{ post.featured_image.path }}" alt="{{ post.title }}" /><br /><br />
+{% endif %}
+{{ post.body|raw }}

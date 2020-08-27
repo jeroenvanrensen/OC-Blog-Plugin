@@ -1,0 +1,22 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    title:
+        label: jeroenvanrensen.blog::lang.models.post.columns.title
+        type: text
+        searchable: true
+    category_name:
+        label: jeroenvanrensen.blog::lang.models.post.columns.category
+        relation: category
+        select: name
+        searchable: true
+    body:
+        label: jeroenvanrensen.blog::lang.models.post.columns.body
+        type: text
+        searchable: true
+        invisible: true
+    published_at:
+        label: jeroenvanrensen.blog::lang.models.post.columns.published
+        type: date

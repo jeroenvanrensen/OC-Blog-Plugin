@@ -1,0 +1,17 @@
+scopes:
+    category:
+        label: jeroenvanrensen.blog::lang.controllers.posts.yaml.category
+        modelClass: JeroenvanRensen\Blog\Models\Category
+        conditions: category_id in (:filtered)
+        nameFrom: name
+    published_at: 
+        label: jeroenvanrensen.blog::lang.controllers.posts.yaml.publish_date
+        type: daterange
+        conditions: published_at >= ':after' AND published_at <= ':before'
+    published:
+        label: jeroenvanrensen.blog::lang.controllers.posts.yaml.published
+        type: switch
+        default: 2
+        conditions: 
+            - published_at IS NULL
+            - published_at IS NOT NULL

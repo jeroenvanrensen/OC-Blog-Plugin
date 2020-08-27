@@ -1,0 +1,47 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+# Model List Column configuration
+list: $/jeroenvanrensen/blog/models/category/columns.yaml
+
+# Model Class name
+modelClass: JeroenvanRensen\Blog\Models\Category
+
+# List Title
+title: jeroenvanrensen.blog::lang.controllers.categories.yaml.categories
+
+# Link URL for each record
+recordUrl: jeroenvanrensen/blog/categories/update/:id
+
+# Message to display if the list is empty
+noRecordsMessage: jeroenvanrensen.blog::lang.controllers.categories.yaml.no_categories_found
+
+# Records to display per page
+recordsPerPage: 20
+
+# Display page numbers with pagination, disable to improve performance
+showPageNumbers: true
+
+# Displays the list column set up button
+showSetup: true
+
+# Displays the sorting link on each column
+showSorting: true
+
+# Default sorting column
+defaultSort:
+    column: name
+    direction: asc
+
+# Display checkboxes next to each record
+showCheckboxes: true
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: list_toolbar
+
+    # Search widget configuration
+    search:
+        prompt: jeroenvanrensen.blog::lang.controllers.categories.yaml.search

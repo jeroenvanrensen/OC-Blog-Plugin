@@ -1,0 +1,27 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: jeroenvanrensen.blog::lang.controllers.categories.yaml.category
+
+# Model Form Field configuration
+form: $/jeroenvanrensen/blog/models/category/fields.yaml
+
+# Model Class name
+modelClass: JeroenvanRensen\Blog\Models\Category
+
+# Default redirect location
+defaultRedirect: jeroenvanrensen/blog/categories
+
+# Create page
+create:
+    title: jeroenvanrensen.blog::lang.controllers.categories.yaml.create_category
+    redirect: jeroenvanrensen/blog/categories/update/:id
+    redirectClose: jeroenvanrensen/blog/categories
+
+# Update page
+update:
+    title: jeroenvanrensen.blog::lang.controllers.categories.yaml.update_category
+    redirect: jeroenvanrensen/blog/categories
+    redirectClose: jeroenvanrensen/blog/categories

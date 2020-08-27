@@ -1,0 +1,27 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: jeroenvanrensen.blog::lang.controllers.posts.yaml.post
+
+# Model Form Field configuration
+form: $/jeroenvanrensen/blog/models/post/fields.yaml
+
+# Model Class name
+modelClass: JeroenvanRensen\Blog\Models\Post
+
+# Default redirect location
+defaultRedirect: jeroenvanrensen/blog/posts
+
+# Create page
+create:
+    title: jeroenvanrensen.blog::lang.controllers.posts.yaml.create_post
+    redirect: jeroenvanrensen/blog/posts/update/:id
+    redirectClose: jeroenvanrensen/blog/posts
+
+# Update page
+update:
+    title: jeroenvanrensen.blog::lang.controllers.posts.yaml.update_post
+    redirect: jeroenvanrensen/blog/posts
+    redirectClose: jeroenvanrensen/blog/posts

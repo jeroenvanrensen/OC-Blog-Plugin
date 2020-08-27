@@ -1,0 +1,61 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    title:
+        label: jeroenvanrensen.blog::lang.models.post.fields.title
+        type: text
+        span: left
+    slug:
+        label: jeroenvanrensen.blog::lang.models.post.fields.slug
+        type: text
+        span: right
+        preset: title
+
+tabs:
+    defaultTab: Properties
+    icons:
+        jeroenvanrensen.blog::lang.models.post.fields.edit: icon-pencil
+        jeroenvanrensen.blog::lang.models.post.fields.properties: icon-cog
+
+    fields:
+        body:
+            label: jeroenvanrensen.blog::lang.models.post.fields.body
+            type: richeditor
+            span: full
+            tab: jeroenvanrensen.blog::lang.models.post.fields.edit
+        published_at:
+            label: jeroenvanrensen.blog::lang.models.post.fields.publish
+            type: datepicker
+            span: left
+            tab: jeroenvanrensen.blog::lang.models.post.fields.properties
+            comment: jeroenvanrensen.blog::lang.models.post.fields.publish_comment
+        featured_image:
+            label: jeroenvanrensen.blog::lang.models.post.fields.featured_image
+            type: fileupload
+            span: right
+            tab: jeroenvanrensen.blog::lang.models.post.fields.properties
+        user_id:
+            label: jeroenvanrensen.blog::lang.models.post.fields.author
+            type: dropdown
+            span: left
+            tab: jeroenvanrensen.blog::lang.models.post.fields.properties
+        category_id:
+            label: jeroenvanrensen.blog::lang.models.post.fields.category
+            type: dropdown
+            span: left
+            tab: jeroenvanrensen.blog::lang.models.post.fields.properties
+        excerpt:
+            label: jeroenvanrensen.blog::lang.models.post.fields.excerpt
+            type: textarea
+            span: left
+            tab: jeroenvanrensen.blog::lang.models.post.fields.properties
+            size: small
+        tags:
+            label: jeroenvanrensen.blog::lang.models.post.fields.tags
+            type: taglist
+            span: left
+            tab: jeroenvanrensen.blog::lang.models.post.fields.properties
+            mode: relation
+            nameFrom: name

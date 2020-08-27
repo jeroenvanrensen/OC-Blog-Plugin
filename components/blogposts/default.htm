@@ -1,0 +1,17 @@
+{% for post in __SELF__.posts %}
+    <li>
+        <h3><a href="{{ __SELF__.postPage|page({ slug: post.slug }) }}">{{ post.title }}</a></h3>
+        <p>
+            {{ 'jeroenvanrensen.blog::lang.components.blogposts.html.posted' | trans }} 
+            {{ 'jeroenvanrensen.blog::lang.components.blogposts.html.on_date' | trans }} <b>{{ post.published_at|date('jeroenvanrensen.blog::lang.components.blogposts.html.date_format' | trans) }}</b>
+            {{ 'jeroenvanrensen.blog::lang.components.blogposts.html.at_time' | trans }} <b>{{ post.published_at|date('jeroenvanrensen.blog::lang.components.blogposts.html.time_format' | trans) }}</b>
+            {{ 'jeroenvanrensen.blog::lang.components.blogposts.html.by_author' | trans }} <b>{{ post.user.getFullNameAttribute() }}</b>
+            {% if post.category_id > 0 %}
+                {{ 'jeroenvanrensen.blog::lang.components.blogposts.html.in_category' | trans }} <b>{{ post.category.name }}</b>
+            {% endif %}
+        </p>
+        <p>{{ post.excerpt }}</p>
+    </li>
+{% else %}
+    {{ 'jeroenvanrensen.blog::lang.components.blogposts.html.no_posts_found' | trans }}
+{% endfor %}
