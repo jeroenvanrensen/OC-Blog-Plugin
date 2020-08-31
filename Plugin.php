@@ -27,7 +27,7 @@ class Plugin extends PluginBase
      * Register all the components which belong to this plugin
      *
      * @return  array
-     */
+     */ 
     public function registerComponents()
     {
         return [
