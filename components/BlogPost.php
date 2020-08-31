@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace JeroenvanRensen\Blog\Components;
 
@@ -9,14 +9,14 @@ use JeroenvanRensen\Blog\Models\Post;
 class BlogPost extends ComponentBase
 {
     /**
-     * The current post
+     * The current post.
      *
      * @var array
      */
     public $post;
 
     /**
-     * Returns details about this component
+     * Returns details about this component.
      *
      * @return  array
      */
@@ -29,7 +29,7 @@ class BlogPost extends ComponentBase
     }
 
     /**
-     * Returns a list of properties for this component
+     * Returns a list of properties for this component.
      *
      * @return  array
      */
@@ -50,7 +50,7 @@ class BlogPost extends ComponentBase
     }
 
     /**
-     * Sets the $post variable when this component is running, and if not found return a 404 response
+     * Sets the $post variable when this component is running, and if not found return a 404 response.
      *
      * @return  null
      */
@@ -62,12 +62,12 @@ class BlogPost extends ComponentBase
             ->first();
 
         // Returns a 404 message if the post does not exist
-        if(!$this->post) {
+        if (! $this->post) {
             return $this->controller->run('404');
         }
 
         // Returns JSON if option is set
-        if($this->property('format') == 'json') {
+        if ($this->property('format') == 'json') {
             return $this->post;
         }
     }

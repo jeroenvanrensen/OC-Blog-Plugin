@@ -10,21 +10,21 @@ class Tag extends Model
     use Validation;
 
     /**
-     * The database table used by the model
+     * The database table used by the model.
      *
-     * @var string.
+     * @var string
      */
     public $table = 'jeroenvanrensen_blog_tags';
 
     /**
-     * Guarded fields
+     * Guarded fields.
      *
      * @var array
      */
     protected $guarded = [];
 
     /**
-     * Validation rules for attributes
+     * Validation rules for attributes.
      *
      * @var array
      */
@@ -34,7 +34,7 @@ class Tag extends Model
     ];
 
     /**
-     * A post belongs to many tags
+     * A post belongs to many tags.
      *
      * @var array
      */
@@ -43,13 +43,13 @@ class Tag extends Model
     ];
 
     /**
-     * Set the "slug" value when creating a tag
+     * Set the "slug" value when creating a tag.
      *
      * @return  null
      */
     public static function boot()
     {
-        static::creating(function($tag) {
+        static::creating(function ($tag) {
             $tag->slug = str_slug($tag->name);
         });
     }

@@ -11,20 +11,20 @@ class Category extends Model
 
     /**
      * The database table used by the model.
-     * 
+     *
      * @var string
      */
     public $table = 'jeroenvanrensen_blog_categories';
 
     /**
-     * Guarded fields
-     * 
+     * Guarded fields.
+     *
      * @var array
      */
     protected $guarded = [];
 
     /**
-     * Validation rules for this model
+     * Validation rules for this model.
      *
      * @var array
      */
