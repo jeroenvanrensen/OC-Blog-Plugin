@@ -23,7 +23,23 @@ class Posts extends Controller
      * @var string
      */
     public $formConfig = 'config_form.yaml';
+    
+    public $requiredPermissions = ['JeroenvanRensen.config_permission', 'JeroenvanRensen.config_other_posts'];
 
+      public function listExtendQuery($query)
+    {
+        if (!$this->user->hasAnyAccess(['JeroenvanRensen.config_other_posts'])) {
+            $query->where('user_id', $this->user->id);
+        }
+    }
+
+    public function formExtendQuery($query)
+    {
+        if (!$this->user->hasAnyAccess(['JeroenvanRensen.config_other_posts'])) {
+            $query->where('user_id', $this->user->id);
+        }
+    } 
+    
     /**
      * Configuration file for the `ListController` behavior.
      * 
