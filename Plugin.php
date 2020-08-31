@@ -35,6 +35,15 @@ class Plugin extends PluginBase
             'JeroenvanRensen\Blog\Components\BlogPost' => 'blogPost',
         ];
     }
+            public function registerPermissions()
+    {
+        return [
+            'JeroenvanRensen.config_permission' => [
+                'label' => 'Blog access',
+                'tab'   => 'Access'
+            ],
+        ];
+    }  
 
     /**
      * Register backend navigation for this plugin.
@@ -48,6 +57,7 @@ class Plugin extends PluginBase
                 'label' => 'jeroenvanrensen.blog::lang.plugin.name',
                 'url' => Backend::url('jeroenvanrensen/blog/posts'),
                 'icon' => 'icon-pencil',
+                'permissions' => ['JeroenvanRensen.*'],
                 'sideMenu' => [
                     'newPost' => [
                         'label' => 'jeroenvanrensen.blog::lang.plugin.navigation.new_post',
