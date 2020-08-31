@@ -5,6 +5,7 @@ namespace JeroenvanRensen\Blog\Models;
 use Backend\Models\User;
 use Model;
 use October\Rain\Database\Traits\Validation;
+use BackendAuth;
 
 class Post extends Model
 {
@@ -81,18 +82,18 @@ class Post extends Model
      *
      * @return  array
      */
-    public function getUserIdOptions()
-    {
-        $userArray = [];
+public function getUserIdOptions()
+  {
+  // placeholder
+  $result = [];
 
-        $users = User::all()->toArray();
+  // only back-end user which is currently logged in
+  // it will be available always as we are in back-end :)
+  $user = BackendAuth::getUser();
+  $result[$user->id] = $user->login; // or $user->email;    
 
-        foreach ($users as $user) {
-            $userArray[$user['id']] = $user['login'] . ' (' . $user['first_name'] . ' ' . $user['last_name'] . ')';
-        }
-
-        return $userArray;
-    }
+  return $result;
+  }
 
     /**
      * Returns an array with all categories
