@@ -11,14 +11,14 @@ class Post extends Model
     use Validation;
 
     /**
-     * The database table used by this model
+     * The database table used by this model.
      *
      * @var  string
      */
     public $table = 'jeroenvanrensen_blog_posts';
 
     /**
-     * Validation rules for this model
+     * Validation rules for this model.
      *
      * @var array
      */
@@ -33,14 +33,14 @@ class Post extends Model
     ];
 
     /**
-     * Guarded fields
+     * Guarded fields.
      *
      * @var  array
      */
     protected $guarded = [];
 
     /**
-     * Apply the category and the user each time a post is fetched
+     * Apply the category and the user each time a post is fetched.
      *
      * @var array
      */
@@ -49,7 +49,7 @@ class Post extends Model
     ];
 
     /**
-     * Attach images to a post
+     * Attach images to a post.
      *
      * @var array
      */
@@ -58,7 +58,7 @@ class Post extends Model
     ];
 
     /**
-     * A post belongs to a user and a category
+     * A post belongs to a user and a category.
      *
      * @var array
      */
@@ -68,7 +68,7 @@ class Post extends Model
     ];
 
     /**
-     * A post belongs to many tags
+     * A post belongs to many tags.
      *
      * @var array
      */
@@ -88,14 +88,14 @@ class Post extends Model
         $users = User::all()->toArray();
 
         foreach ($users as $user) {
-            $userArray[$user['id']] = $user['login'] . ' (' . $user['first_name'] . ' ' . $user['last_name'] . ')';
+            $userArray[$user['id']] = $user['login'].' ('.$user['first_name'].' '.$user['last_name'].')';
         }
 
         return $userArray;
     }
 
     /**
-     * Returns an array with all categories
+     * Returns an array with all categories.
      *
      * @return  array
      */

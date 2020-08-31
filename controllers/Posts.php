@@ -1,15 +1,15 @@
-<?php 
+<?php
 
 namespace JeroenvanRensen\Blog\Controllers;
 
-use BackendMenu;
 use Backend\Classes\Controller;
+use BackendMenu;
 
 class Posts extends Controller
 {
     /**
      * Behaviors that are implemented by this controller.
-     * 
+     *
      * @var array
      */
     public $implement = [
@@ -18,21 +18,21 @@ class Posts extends Controller
     ];
 
     /**
-     * Configuration file for the `FormController` behavior
-     * 
+     * Configuration file for the `FormController` behavior.
+     *
      * @var string
      */
     public $formConfig = 'config_form.yaml';
 
     /**
      * Configuration file for the `ListController` behavior.
-     * 
+     *
      * @var string
      */
     public $listConfig = 'config_list.yaml';
 
     /**
-     * Set the backend menu
+     * Set the backend menu.
      *
      * @return  null
      */

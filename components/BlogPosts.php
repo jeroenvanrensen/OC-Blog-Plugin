@@ -13,21 +13,21 @@ use JeroenvanRensen\Blog\Models\Tag;
 class BlogPosts extends ComponentBase
 {
     /**
-     * An array with all of the posts from the database
+     * An array with all of the posts from the database.
      *
      * @var array
      */
     public $posts;
 
     /**
-     * The name of the page for a single post
+     * The name of the page for a single post.
      *
      * @var string
      */
     public $postPage;
 
     /**
-     * Returns the details for this component
+     * Returns the details for this component.
      *
      * @return  array
      */
@@ -40,7 +40,7 @@ class BlogPosts extends ComponentBase
     }
 
     /**
-     * Returns a list of properties for this component
+     * Returns a list of properties for this component.
      *
      * @return  array
      */
@@ -97,7 +97,7 @@ class BlogPosts extends ComponentBase
     }
 
     /**
-     * Sets the $posts and $postPage variable when the component is running
+     * Sets the $posts and $postPage variable when the component is running.
      *
      * @return  null
      */
@@ -107,13 +107,13 @@ class BlogPosts extends ComponentBase
         $this->postPage = $this->property('postPage');
 
         // Return JSON if option is set
-        if($this->property('format') == 'json') {
+        if ($this->property('format') == 'json') {
             return $this->posts;
         }
     }
 
     /**
-     * Returns a list of posts from the database
+     * Returns a list of posts from the database.
      *
      * @return  array
      */
@@ -125,11 +125,11 @@ class BlogPosts extends ComponentBase
 
         // Apply the tag filter
 
-        if($this->property('tagFilter')) {
+        if ($this->property('tagFilter')) {
             $tag = Tag::where('slug', $this->property('tagFilter'))->first();
 
             // Tag not found
-            if(!$tag) {
+            if (! $tag) {
                 return $this->controller->run('404');
             }
 
@@ -138,11 +138,11 @@ class BlogPosts extends ComponentBase
 
         // Apply the category filter
 
-        if($this->property('categoryFilter')) {
+        if ($this->property('categoryFilter')) {
             $category = Category::where('slug', $this->property('categoryFilter'))->first();
 
             // Category not found
-            if(!$category) {
+            if (! $category) {
                 return $this->controller->run('404');
             }
 
@@ -161,7 +161,7 @@ class BlogPosts extends ComponentBase
     }
 
     /**
-     * Returns a list of all pages which belong to the active theme
+     * Returns a list of all pages which belong to the active theme.
      *
      * @return  array
      */

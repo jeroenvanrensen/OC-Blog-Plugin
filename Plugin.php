@@ -8,7 +8,7 @@ use System\Classes\PluginBase;
 class Plugin extends PluginBase
 {
     /**
-     * Returns the details about this plugin
+     * Returns the details about this plugin.
      *
      * @return array
      */
@@ -24,7 +24,7 @@ class Plugin extends PluginBase
     }
 
     /**
-     * Register all the components which belong to this plugin
+     * Register all the components which belong to this plugin.
      *
      * @return  array
      */
