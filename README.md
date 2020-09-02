@@ -1,5 +1,7 @@
 # OctoberCMS Blogging Plugin
 
+[![StyleCI](https://github.styleci.io/repos/290830074/shield?branch=master)](https://github.styleci.io/repos/290830074?branch=master)
+
 A simple and extensible blogging plugin for OctoberCMS.
 
 # Contents
